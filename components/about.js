@@ -4,6 +4,7 @@ import { FiHeart } from "react-icons/fi";
 import productsApi from "@/service/products";
 import { useState, useEffect } from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 const Index = () => {
   const [data, setData] = useState([]);
@@ -36,7 +37,6 @@ const Index = () => {
           {data.length > 0 ? (
             data?.map((product, index) => (
               <div
-                onClick={() => window.open(`/products/${product?.product_id}`)}
                 key={index}
                 className="border rounded-lg overflow-hidden shadow-lg w-[292px] bg-white relative cursor-pointer transform transition-transform hover:scale-105"
               >
@@ -59,9 +59,12 @@ const Index = () => {
                   </button>
                 </div>
                 <div className="p-4">
-                  <h3 className="text-lg font-bold mb-2 w-[216px]">
+                  <Link
+                    href={`/products/${product?.product_id}`}
+                    className="text-lg font-bold mb-2 w-[216px]"
+                  >
                     {product.product_name}
-                  </h3>
+                  </Link>
                   <div className="text-red-500 font-bold text-xl">
                     {product.cost - (product.cost * product.discount) / 100} uzs
                   </div>

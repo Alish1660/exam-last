@@ -7,7 +7,7 @@ const Index = () => {
       <div className="pb-[80px]">
         <div className=" container">
           <div className="flex flex-col items-center lg:items-start sm:flex-col lg:flex-row gap-[24px] pt-[79px]">
-            <div className=" w-[400px]  lg:w-[187px] h-[256px] pt-[18px] pl-2 bg-white rounded-md">
+            <div className="w-[187px] h-64 pt-[18px] pl-2 bg-white rounded-md">
               <div className="flex justify-start gap-1 pl-[8px]">
                 <Image src={Line} alt="line" />
                 <h1 className=" text-[16px] font-normal leading-normal">

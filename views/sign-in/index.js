@@ -49,7 +49,7 @@ const KeepMountedModal = ({ open, handleClose }) => {
     >
       <Box className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[378px] h-[400px] p-6 bg-white rounded shadow-lg">
         <IconButton
-          className="absolute top-0 left-[310px]"
+          className="absolute top-0 right-[10px]"
           onClick={handleClose}
         >
           <CloseIcon />
@@ -58,7 +58,7 @@ const KeepMountedModal = ({ open, handleClose }) => {
           id="keep-mounted-modal-title"
           variant="h6"
           component="h2"
-          className="text-xl font-semibold mb-2"
+          className="text-xl font-semibold mb-2 pt-[20px]"
         >
           Вход в аккаунт
         </Typography>
