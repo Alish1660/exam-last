@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from "react";
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
+import "./carousel.css";
 import Image from "next/image";
 import cart from "@/public/images/cart.png";
 import sliders from "@/public/images/sliders.png";
@@ -9,7 +10,6 @@ import share from "@/public/images/share.png";
 import { useParams } from "next/navigation";
 import http from "@/api/interseptors";
 import Link from "next/link";
-import "./carousel.css";
 
 const SingleProductPage = () => {
   const [product, setProduct] = useState(null);
@@ -39,8 +39,8 @@ const SingleProductPage = () => {
   return (
     <div className="p-4 md:p-8 bg-custom-gray">
       <div className="container">
-        <div className="flex rounded-lg bg-white">
-          <div className="md:w-1/2">
+        <div className="flex flex-col sm:flex-col md:flex-row lg:flex-row gap-[40px]  rounded-lg ">
+          <div className=" w-full max-w-[600px] h-[530px] flex flex-col justify-center  items-center bg-white rounded-xl">
             <Carousel
               showArrows={true}
               showThumbs={false}
@@ -48,7 +48,7 @@ const SingleProductPage = () => {
               infiniteLoop={true}
               useKeyboardArrows={true}
               autoPlay={true}
-              className="w-[400px] rounded-xl overflow-hidden"
+              className=" w-[300px]  lg:w-[400px] rounded-xl overflow-hidden"
             >
               {image_url && image_url.length > 0 ? (
                 image_url.map((url, index) => (
@@ -56,8 +56,8 @@ const SingleProductPage = () => {
                     <Image
                       src={url}
                       alt={product_name}
-                      width={200}
-                      height={200}
+                      width={400}
+                      height={500}
                     />
                   </div>
                 ))
@@ -78,7 +78,7 @@ const SingleProductPage = () => {
                 image_url.map((url, index) => (
                   <div
                     key={index}
-                    className="w-20 h-20 bg-white p-2 border-2 border-yellow-500 rounded-lg overflow-hidden"
+                    className="w-20 h-20 bg-white p-2 border-2  rounded-lg overflow-hidden"
                   >
                     <Image
                       src={url}
@@ -91,7 +91,7 @@ const SingleProductPage = () => {
                 ))}
             </div>
           </div>
-          <div className="md:w-1/2 p-8 bg-white mb-[40px]">
+          <div className=" w-full max-w-[600px] h-[530px] p-8 bg-white rounded-lg mb-[40px]">
             <h1 className="text-2xl font-bold">{product_name}</h1>
             <p className="mt-2 text-gray-700">{description}</p>
             <p className="mt-2 text-gray-700">В наличии: {count} шт.</p>
