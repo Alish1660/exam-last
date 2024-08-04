@@ -1,7 +1,7 @@
 "use client";
 import { FaShoppingCart } from "react-icons/fa";
 import { FiHeart } from "react-icons/fi";
-import productsApi from "@/service/products";
+import productsApi from "@/service/products.service";
 import LikePost from "@/service/like.service";
 import { useState, useEffect } from "react";
 import Image from "next/image";
@@ -42,6 +42,8 @@ const Index = () => {
         localStorage.setItem("likedItems", JSON.stringify(updatedLikedItems));
       } else {
         const updatedLikedItems = likedItems.filter((itemId) => itemId !== id);
+        toast.success("Product removed from wishlist");
+
         setLikedItems(updatedLikedItems);
         localStorage.setItem("likedItems", JSON.stringify(updatedLikedItems));
       }
