@@ -37,3 +37,42 @@
 .carousel .control-next.control-arrow:before {
   border-left: 8px solid #aaa8a8;
 }
+
+/* Custom styles for the carousel */
+.carousel .slide {
+  background: none;
+}
+
+.carousel .control-arrow {
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.carousel .control-arrow:hover {
+  background: rgba(0, 0, 0, 0.8);
+}
+
+.carousel .thumb {
+  border: 2px solid #ddd;
+  border-radius: 5px;
+}
+
+.carousel .thumb.selected,
+.carousel .thumb:hover {
+  border-color: #ffcc00;
+}
+
+.carousel .thumbs-wrapper {
+  margin-top: 10px;
+  overflow-x: auto;
+}
+
+.carousel .thumbs {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
