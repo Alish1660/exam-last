@@ -246,7 +246,7 @@ const SingleProductPage = () => {
                     />
                     <div>
                       <p className="font-bold">{comment.OwnerID}</p>
-                      <p className="text-sm text-gray-600">Клиент</p>
+                      <p className="text-sm text-gray-600">{}</p>
                       <p className="mt-1 text-sm text-gray-600">
                         {comment.Message}
                       </p>

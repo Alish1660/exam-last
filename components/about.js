@@ -96,7 +96,7 @@ const Index = () => {
                   key={index}
                   className="border rounded-lg overflow-hidden shadow-lg w-[292px] bg-white relative cursor-pointer transform transition-transform hover:scale-105"
                 >
-                  <div className="relative w-full h-[400px]">
+                  <div className="relative w-full h-[300px]">
                     {product.image_url && product.image_url.length > 0 ? (
                       <Image
                         src={product.image_url[0]}
